@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Example</title>
+    <script>
+        function createSession() {
+            sessionStorage.setItem("sessionID", "123456");
+            sessionStorage.setItem("creationTime", new Date().toISOString());
+            sessionStorage.setItem("lastAccessedTime", new Date().toISOString());
+            displaySession();
+        }
+
+        function displaySession() {
+            const sessionID = sessionStorage.getItem("sessionID");
+            const creationTime = sessionStorage.getItem("creationTime");
+            const lastAccessedTime = sessionStorage.getItem("lastAccessedTime");
+
+            document.getElementById("sessionInfo").innerHTML = `
+                <p>Session ID: ${sessionID}</p>
+                <p>Creation Time: ${creationTime}</p>
+                <p>Last Accessed Time: ${lastAccessedTime}</p>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Session Information</h1>
+    <button onclick="createSession()">Create Session</button>
+    <div id="sessionInfo"></div>
+</body>
+</html>
