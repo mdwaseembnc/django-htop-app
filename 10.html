@@ -1,0 +1,52 @@
+10a)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Message</title>
+    <script>
+        function greetUser() {
+            const username = document.getElementById("username").value;
+            document.getElementById("greeting").innerText = `Hello, ${username}! Welcome!`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Enter Your Name</h1>
+    <input type="text" id="username" placeholder="Enter your name">
+    <button onclick="greetUser()">Submit</button>
+    <p id="greeting"></p>
+</body>
+</html>
+..............................................................................
+10b)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <script>
+        function changeBackgroundColor() {
+            const selectedColor = document.getElementById("colorPicker").value;
+            document.body.style.backgroundColor = selectedColor;
+        }
+    </script>
+</head>
+<body>
+    <h1>Change Background Color</h1>
+    <p>Select a color from the dropdown to change the background color of the page:</p>
+    <label for="colorPicker">Choose a color:</label>
+    <select id="colorPicker" onchange="changeBackgroundColor()">
+        <option value="white">White</option>
+        <option value="lightblue">Light Blue</option>
+        <option value="lightgreen">Light Green</option>
+        <option value="yellow">Yellow</option>
+        <option value="pink">Pink</option>
+        <option value="gray">Gray</option>
+        <option value="orange">Orange</option>
+    </select>
+</body>
+</html>
+
