@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+    <script>
+        function displayUserInfo() {
+            const username = document.getElementById("username").value;
+            const address = document.getElementById("address").value;
+            document.getElementById("userInfo").innerHTML = `
+                <p>Username: ${username}</p>
+                <p>Address: ${address}</p>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Enter User Information</h1>
+    <input type="text" id="username" placeholder="Enter your name">
+    <input type="text" id="address" placeholder="Enter your address">
+    <button onclick="displayUserInfo()">Submit</button>
+    <div id="userInfo"></div>
+</body>
+</html>
