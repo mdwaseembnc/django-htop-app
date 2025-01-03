@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        input, button {
+            margin: 5px 0;
+            padding: 10px;
+            width: 100%;
+        }
+        .output {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Your Favorite Language</h2>
+        <label for="lang">Favorite Programming Language:</label>
+        <input type="text" id="lang" placeholder="Enter language">
+        <button onclick="createCookie()">Submit</button>
+        <h3>Output:</h3>
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        // Function to create a cookie
+        function createCookie() {
+            const lang = document.getElementById('lang').value;
+
+            if (!lang) {
+                alert("Please enter your favorite programming language.");
+                return;
+            }
+
+            // Set cookie with a 1-day expiration
+            const date = new Date();
+            date.setTime(date.getTime() + (24 * 60 * 60 * 1000)); // 1 day
+            const expires = "expires=" + date.toUTCString();
+
+            document.cookie = `language=${lang}; ${expires}; path=/`;
+
+            // Display confirmation message
+            document.getElementById('output').innerHTML = 
+                `<p>Favorite Language Cookie Created: <strong>${lang}</strong></p>`;
+        }
+
+        // Function to display cookies (for debugging)
+        function displayCookies() {
+            const cookies = document.cookie;
+            document.getElementById('output').innerHTML = cookies || "No cookies stored.";
+        }
+    </script>
+</body>
+</html>
