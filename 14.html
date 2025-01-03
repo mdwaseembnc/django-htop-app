@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Information</title>
+    <script>
+        function displayServerInfo() {
+            document.getElementById("serverInfo").innerHTML = `
+                <p>Request Method: GET</p>
+                <p>Request URI: ${location.pathname}</p>
+                <p>Protocol: HTTP/1.1</p>
+                <p>Remote Address: 192.168.1.1</p>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Server Information Viewer</h1>
+    <p>Click the button below to fetch and display server information.</p>
+    <button onclick="displayServerInfo()">Get Server Info</button>
+    <div id="serverInfo" style="margin-top: 20px; font-weight: bold;"></div>
+</body>
+</html>
