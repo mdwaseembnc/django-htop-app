@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting by Time</title>
+    <script>
+        function greetByTime() {
+            const currentTime = new Date().getHours();
+            let greeting = "";
+
+            if (currentTime < 12) {
+                greeting = "Good Morning!";
+            } else if (currentTime < 18) {
+                greeting = "Good Afternoon!";
+            } else {
+                greeting = "Good Evening!";
+            }
+
+            document.getElementById("timeGreeting").innerText = greeting;
+            document.getElementById("greetingContainer").style.display = "block";
+        }
+    </script>
+    <style>
+        #greetingContainer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Greeting Based on Time</h1>
+    <button onclick="greetByTime()">Get Greeting</button>
+    <div id="greetingContainer">
+        <p id="timeGreeting"></p>
+    </div>
+</body>
+</html>
