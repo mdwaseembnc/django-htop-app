@@ -6,3 +6,14 @@ VALUES
 (1004, 'The Great Gatsby', 'F. Scott Fitzgerald', '2nd', 'Charles Scribner\'s Sons'),
 (1005, 'Moby-Dick', 'Herman Melville', '1st', 'Harper & Brothers');
 
+...............
+
+USE test_db;
+
+INSERT INTO users (name, age)
+VALUES
+('Alice Johnson', 25),
+('Bob Smith', 30),
+('Charlie Brown', 22),
+('Diana Prince', 28),
+('Ethan Hunt', 35);
